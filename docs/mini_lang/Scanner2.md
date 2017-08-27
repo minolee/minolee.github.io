@@ -33,6 +33,7 @@ enum RegexOperation
 [소스 코드](https://github.com/minolee/mini_lang/blob/master/src/scanner/RegexTree.java)
 
 이제 Regex를 본격적으로 파싱해 봅시다!
+
 하나의 글자를 읽은 다음에, 해당 글자에 맞는 RegexTree를 만들고, 이 데이터를 다음 파싱의 context로 보내는 방식으로 만들어 보았습니다. 왜냐하면 *이나 |과 같은 특수 case는 이전 RegexTree의 데이터를 필요로 하기 때문입니다.
 ```
 private static RegexTree parseRegex(String line, RegexTree context)
@@ -94,10 +95,13 @@ private static Automaton interpretRegexTree(RegexTree tree)
 
 ### 마치며
 (사실 쓰다가 많이 귀찮아졌습니다)
+
 옛날에 오토마타 프로젝트때 하던 것을 거의 그대로 반복하는 기분이네요...
+
 원래 single line comment는 //(^\n)*과 같은 식으로 (~~를 빼고 전부) 라는 형식의 regular expression을 만드려 했습니다. 하지만 ^의 범위가 굉장히 애매하고, ^ 다음에 괄호가 오는 상황이라던지, ^ 다음에 []가 오는 상황이라던지를 고려해 보았을 때 그 복잡성이 엄청나게 증가하는 느낌이 들어서 일단 문법을 수정하는 방향으로 가 보기로 했습니다. 어쩌면 나중에 프로그램 구조 파싱할 때 이 부분 때문에 걸려서 수정하게 될지도 모르겠네요.
 
 ###소스 코드 링크
+
 [link](https://github.com/minolee/mini_lang/blob/master/src/scanner/Automaton.java)
 
 Last edited 2017-08-28
