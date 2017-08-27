@@ -2,6 +2,7 @@
 
 ## 1. Scanner 만들기(1)
 
+### 구조체들
 프로그램 소스 코드를 인식하기 위해 소스 코드의 각 단어가 어떤 것을 의미하는지를 알아야 합니다. 일단 키워드들은 유한한 문자열이고, 공백으로 분리된 각 단어들은 특정 키워드를 나타내거나, 여러 개의 키워드의 연속으로 이루어져 있다고 볼 수 있습니다.
 
 이 키워드를 인식하기 위해, Regular expression을 인식하는 모듈을 만들어 봅시다.
@@ -18,7 +19,7 @@ MINUS : -
 ...
 AND : && | and
 ...
-COMMENT : //^\n*|/\*.*\*/
+COMMENT : //.*\\n|/\*.*\*/
 ```
 
 방금 들은 예시들보다 많은 case들이 있을 수 있지만, 일단 이 정도에 필요한 Regex Parser를 만들어야 합니다.
@@ -46,12 +47,12 @@ public class Automaton
 )
 ```
 
-Automaton에 필수적으로 필요할 함수는 하나의 string을 받아서 이 string이 Accepting string인가를 분석하는 것과, Regex를 받아서 하나의 Automaton으로 parse하는 함수가 필요할 것입니다.
+Automaton에 필수적으로 필요할 함수는 하나의 string을 받아서 이 string이 Accepting string인가를 분석하는 것과, Regex를 받아서 하나의 Automaton으로 parse하는 함수입니다.
 
 ```
 public boolean accepts(String text)
 {
-	...
+	//text의 모든 글자 sequence를 돌린 뒤 도달한 state가 accepting state인지를 반환
 }
 ...
 public static Automaton parseRegex(String regex)
@@ -60,10 +61,11 @@ public static Automaton parseRegex(String regex)
 }
 ```
 
-자세한 내용은 다음 포스트에서...
+파싱에 대한 자세한 내용은 다음 포스트에서...
 
 
 Last edited 2017-08-27
 
  - [처음으로](https://minolee.github.io)
  - [이전글](Description.md)
+ - [다음글](Scanner2.md)
