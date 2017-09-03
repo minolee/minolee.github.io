@@ -1,4 +1,7 @@
-## Main page
+# Main page
+
+## Profile
+[Here!](docs/Profile.md)
 
 ## Projects
 ### mini_lang compiler project
