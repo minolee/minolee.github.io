@@ -69,5 +69,5 @@ public static Automaton parseRegex(String regex)
 Last edited 2017-08-28
 
  - [처음으로](https://minolee.github.io)
- - [이전글](Description.md)
- - [다음글](Scanner2.md)
+ - [이전글](0_Description.md)
+ - [다음글](2_Scanner2.md)

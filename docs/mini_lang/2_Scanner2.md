@@ -44,7 +44,7 @@ if(line.length() == 0) return context;
 ```
 line의 첫 글자를 읽으며 다음과 같은 행동을 합니다.
  - 보통 글자 : 이번 글자를 data로 가진 RegexTree를 만들고, context와 CONCATNATION으로 잇는 하나의 큰 Tree를 만듭니다. 이를 다음 파싱에 context로 전달합니다.
- - * : REPEAT operation을 가진 tree를 만들고, 직전의 RegexTree를 child로 넣습니다. 이 때, context가 CONCATNATION으로 이루어져 있는 경우는 context의 뒤쪽의 child만 반복해야 합니다.
+ - \* : REPEAT operation을 가진 tree를 만들고, 직전의 RegexTree를 child로 넣습니다. 이 때, context가 CONCATNATION으로 이루어져 있는 경우는 context의 뒤쪽의 child만 반복해야 합니다.
  - \ : 다음 문자를 하나 더 읽고, 보통 글자와 같이 행동합니다.
  - \| : \|를 기준으로 두 부분으로 나뉘어집니다. \| 이전에 나온 문자들은 이미 파싱이 완료된 상태이므로, 이를 하나의 subtree로 만들고, 나머지 부분을 파싱하여 두 번째 subtree로 만들어 줍니다.
  - . : ALL operation을 가진 tree를 만들어 context로 던져줍니다.
@@ -100,11 +100,14 @@ private static Automaton interpretRegexTree(RegexTree tree)
 
 원래 single line comment는 //(^\n)*과 같은 식으로 (~~를 빼고 전부) 라는 형식의 regular expression을 만드려 했습니다. 하지만 ^의 범위가 굉장히 애매하고, ^ 다음에 괄호가 오는 상황이라던지, ^ 다음에 []가 오는 상황이라던지를 고려해 보았을 때 그 복잡성이 엄청나게 증가하는 느낌이 들어서 일단 문법을 수정하는 방향으로 가 보기로 했습니다. 어쩌면 나중에 프로그램 구조 파싱할 때 이 부분 때문에 걸려서 수정하게 될지도 모르겠네요.
 
-###소스 코드 링크
+뭔가 글을 쓰면서 설명충이 된 기분인데, 원래 목적은 설명을 하려는게 아니라 간단한 후기 정도만 남기려고 했던 것이 점점 길어져서 이렇게 되고 있습니다. 
+
+### 소스 코드 링크
 
 [link](https://github.com/minolee/mini_lang/blob/master/src/scanner/Automaton.java)
 
-Last edited 2017-08-28
+Last edited 2017-08-30
 
  - [처음으로](https://minolee.github.io)
- - [이전글](Scanner1.md)
+ - [이전글](1_Scanner1.md)
+ - [다음글](3_Keyword.md)
