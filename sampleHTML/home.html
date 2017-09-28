@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HOME</title>
+	<style type="text/css">
+		div.form{
+			position:absolute;
+			top:50%;
+			left:50%;
+			transform: translateX(-50%) translateY(-50%);
+			text-align: center;
+		}
+	</style>
+	<script type="text/javascript" src="remainingTime.js"></script>
+</head>
+<body>
+	<div class="form">
+		<p>목표 시간을 입력하세요</p>
+		<form name="dayInputField">
+			<input type="number" name="year">년
+			<input type="number" name="month">월<br>
+			<input type="number" name="date">일
+			<input type="number" name="hour">시<br>
+			<input type="number" name="minute" value="0">분
+			<input type="number" name="second" value="0">초
+		</form>
+		<br><br>
+		<button onclick = "getInput()">Hit me!</button>
+	<p id="here"></p>
+	</div>
+	<script>
+		var form = document.forms["dayInputField"];
+		var current = new Date();
+		console.log(current);
+		form.year.value = current.getFullYear();
+		form.month.value = current.getMonth() + 1;
+		form.date.value = current.getDate();
+		form.hour.value = current.getHours();
+		form.minute.value = current.getMinutes();
+		form.second.value = current.getSeconds();
+		function getInput()
+		{
+			showRemainingTimeInterval(
+				form.year.value, 
+				form.month.value - 1,
+				form.date.value,
+				form.hour.value,
+				form.minute.value,
+				form.second.value, 'here');
+		}
+	</script>
+</body>
+</html>
