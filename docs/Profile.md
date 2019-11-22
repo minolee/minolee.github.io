@@ -18,7 +18,11 @@ email: [lmh30003@naver.com](mailto:lmh30003@naver.com)
 
 ### 석사과정
  - 새로운 개체 발견과 반복적 개체 연결에 대한 방법 연구, HCLT 2019 (우수논문상) [링크](../files/새로운_개체_발견과_반복적_개체_연결에_대한_연구.pdf)
- - 개체 발견을 활용한 자가확장형 개체 연결에 대한 연구 (학위논문)
+ - 개체 발견을 활용한 자가확장형 개체 연결에 대한 연구 (학위논문) - 포트폴리오 참고
+ - 영화 스포일러 감지 모델 (텀프로젝트): POS tagger와 Bag of words를 사용한 logestic regression clasifier 제작 [링크](../files/Spoiler_detector.pdf)
+ - Rich Context Competition (텀프로젝트): PDF converting / NER 및 Document similarity를 사용하여 논문에서 데이터셋을 나타내는 텍스트를 찾고, 어떤 데이터셋을 나타내는지 판단 [링크](../files/RCC.pdf)
+ - mini-lang (텀프로젝트): Java, Kotlin을 사용하여 새로운 프로그래밍 언어 문법을 정의하고 동작하는 인터프리터 설계 [링크](https://github.com/minolee/mini_lang/tree/CS522)
+
 
 #### 포트폴리오
 [링크](../files/포트폴리오-이민호-최종.pdf)
